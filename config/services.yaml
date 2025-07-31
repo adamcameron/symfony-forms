@@ -15,3 +15,8 @@ services:
         $database: '%env(MARIADB_DATABASE)%'
         $username: '%env(MARIADB_USER)%'
         $password: '%env(MARIADB_PASSWORD)%'
+
+    App\Validator\UniqueLoginIdValidator:
+      arguments:
+        - '@doctrine.orm.entity_manager'
+      tags: [ 'validator.constraint_validator' ]

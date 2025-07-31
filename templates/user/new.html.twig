@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/new-user.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/new-user.js') }}"></script>
+{% endblock %}
+
+{% block title %}New User{% endblock %}
+
+{% block body %}
+    <h1>Create New User</h1>
+    {{ form_start(form) }}
+    <div>
+        {{ form_label(form.givenName) }}
+        {{ form_widget(form.givenName) }}
+        {{ form_errors(form.givenName) }}
+    </div>
+    <div>
+        {{ form_label(form.familyName) }}
+        {{ form_widget(form.familyName) }}
+        {{ form_errors(form.familyName) }}
+    </div>
+    <div>
+        {{ form_label(form.email) }}
+        {{ form_widget(form.email) }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div>
+        {{ form_label(form.loginId) }}
+        {{ form_widget(form.loginId) }}
+        {{ form_errors(form.loginId) }}
+    </div>
+    <div>
+        {{ form_label(form.password.first) }}
+        <div class="field-input">
+            {{ form_widget(form.password.first) }}
+            {{ form_errors(form.password.first) }}
+        </div>
+    </div>
+    <div>
+        {{ form_label(form.password.second) }}
+        {{ form_widget(form.password.second) }}<br>
+        {{ form_errors(form.password.second) }}
+        {{ form_errors(form.password) }}
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    {{ form_end(form) }}
+{% endblock %}

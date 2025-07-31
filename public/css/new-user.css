@@ -1,0 +1,31 @@
+form[name="user"] label.required::after {
+    content: " *";
+    color: red;
+    font-weight: bold;
+}
+
+form[name="user"] > div {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.2em;
+}
+
+form[name="user"] label {
+    min-width: 140px;
+    margin-right: 1em;
+    text-align: right;
+    padding-top: 0.4em;
+}
+
+form[name="user"] .field-input {
+    display: flex;
+    flex-direction: column;
+}
+
+form[name="user"] input {
+    padding: 0.4em 0.6em;
+    box-sizing: border-box;
+    width: 250px;
+    max-width: 100%;
+    margin-bottom: 0.2em;
+}
